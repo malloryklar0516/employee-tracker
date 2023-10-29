@@ -21,22 +21,21 @@ VALUES
 ("General Counsel", 300000.00, 5),
 ("Audit Analyst",80000.00,3),
 ("Legal Associate", 140000.00,5),
-("Finance Director", 250000.00,2);
+("Finance Director", 250000.00,2), 
+("General Manager", 150000.00, 1);
 
 
 SELECT * FROM role;
 INSERT INTO employee(first_name, last_name, role_id, manager_id)
 VALUES 
-("Will", "Smith", 2, NULL),
+("Will", "Smith", 2, 11),
 ("Hannah", "Wales", 1, 4),
-("Julia", "Cohen", 3, NULL),
-("Max", "Samuels", 4, NULL),
-("Scott", "Daniels", 10, NULL),
-("Daniel", "Brooks", 7, NULL),
+("Julia", "Cohen", 3, 11),
+("Max", "Samuels", 4, 11),
+("Scott", "Daniels", 10, 11),
+("Daniel", "Brooks", 7, 11),
 ("Meredith", "Gray",9, 7),
 ("Sydney", "Green", 8, 3), 
-("Justin", "Swift", 6, NULL), 
-("Heather", "Hane", 5, NULL);
-
-SELECT * FROM employee;
-
+("Justin", "Swift", 6, 11), 
+("Heather", "Hane", 5, 11),
+("Mike", "Miller", 10, 11);

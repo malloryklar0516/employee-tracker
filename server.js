@@ -81,13 +81,12 @@ const viewAllRoles = () => {
     INNER JOIN department ON role.department_id = department.id`;
     connection.query(sql, (error, response) => {
         if (error) throw error;
-        response.forEach((role)=> {
-            console.log(role.title);
-           
-        })
+        console.table(response);
         promptUser();
-    }) 
-  }
+        })
+        
+    } 
+  
   //shows user all departments
 
   const viewAllDepartments = () => {
@@ -245,16 +244,16 @@ const updateEmployeeRole= () => {
         if (error) throw error; 
         let namesArray = [];
         response.forEach((employee)=> {namesArray.push(`${employee.first_name} ${employee.last_name}`)});
-        console.log(namesArray);
+        //console.log(namesArray);
         const employees1 = response.map(({id, first_name, last_name})=> ({name: first_name + " " + last_name, value: id}));
-        console.log(employees1);
+       // console.log(employees1);
         let sql = `SELECT role.id, role.title FROM role`;
         
         connection.query(sql, (error, response)=> {
             if (error) throw error;
             let jobs = [];
             response.forEach((role)=> {jobs.push(role.title)});
-            console.log(jobs);
+            //console.log(jobs);
             const jobs1 = response.map(({id, title})=> ({name: title, value: id}));
             inquirer.prompt([
                 {
@@ -290,15 +289,11 @@ const updateEmployeeRole= () => {
                 let sql = `UPDATE employee  SET role_id = ${newRoleId} WHERE employee.id =  ${empId}`;
                     connection.query(sql, (error, response) => {
                         if (error) throw error;
+                        viewAllEmployees();
+                        promptUser();
                     });
-     
-           
-    
-
              }
             )
         })
-    
     })
-    
 }
