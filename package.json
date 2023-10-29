@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "connection": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.6.2",
+    "validate": "^5.2.0"
+  }
+}
