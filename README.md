@@ -40,6 +40,11 @@ https://watch.screencastify.com/v/HK3lq8yVxCV6AQ3NKho8
 ## Tech Used
 MySQL2, javascript, nodejs, inquirer
 
+## instructions
+Make sure all required npm packages are installed and that mySQL2 is installed
+Run Schema and Seeds in sql or workbench 
+start application by entering node server.js in terminal!
+
 ## License 
 MIT 
 © 2023 malloryklar0516
